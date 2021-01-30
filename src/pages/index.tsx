@@ -1,70 +1,67 @@
 import { useState } from 'react';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
-import { title, description } from '../../db.json';
+import { title, bg } from '../../db.json';
 
 // Components
 import QuizBackground from '../components/QuizBackground';
+import QuizContainer from '../components/QuizContainer';
+import QuizLogo from '../components/QuizLogo';
 import { Widget, WidgetContent, WidgetHeader } from '../components/Widget';
+import Input from '../components/Input';
+import Button from '../components/Button';
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
-import QuizLogo from '../components/QuizLogo';
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-
-  @media screen and (max-width: 500px) {
-    padding: 16px;
-    margin: auto;
-  }
-`;
 
 export default function Home() {
   const [name, setName] = useState('');
   const router = useRouter();
 
   return (
-    <QuizBackground>
-      <QuizContainer>
-        <QuizLogo />
+    <>
+      <Head>
+        <title>Enigmas da Esfinge - Alura Quiz</title>
+      </Head>
 
-        <Widget>
-          <WidgetHeader>
-            <h1>{title}</h1>
-          </WidgetHeader>
+      <QuizBackground bg={bg}>
+        <QuizContainer>
+          <QuizLogo />
 
-          <WidgetContent>
-            <p>{description}</p>
+          <Widget>
+            <WidgetHeader>
+              <h1>{title}</h1>
+            </WidgetHeader>
 
-            <form
-              onSubmit={e => {
-                e.preventDefault();
-                router.push(`/quiz?name=${name}`);
-              }}
-            >
-              <input
-                placeholder="Diga-nos seu nome"
-                onChange={e => setName(e.target.value)}
-              />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-              </button>
-            </form>
-          </WidgetContent>
-        </Widget>
+            <WidgetContent>
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                  router.push(`/quiz?name=${name}`);
+                }}
+              >
+                <Input
+                  name="userName"
+                  placeholder="Diga-nos seu nome"
+                  onChange={e => setName(e.target.value)}
+                />
 
-        <Widget>
-          <WidgetContent>
-            <h1>Quizes da Galera</h1>
-          </WidgetContent>
-        </Widget>
+                <Button type="submit" disabled={name.length === 0}>
+                  Jogar
+                </Button>
+              </form>
+            </WidgetContent>
+          </Widget>
 
-        <Footer />
-      </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/tiagoscastro" />
-    </QuizBackground>
+          <Widget>
+            <WidgetContent>
+              <h1>Quizes da Galera</h1>
+            </WidgetContent>
+          </Widget>
+
+          <Footer />
+        </QuizContainer>
+        <GitHubCorner projectUrl="https://github.com/tiagoscastro" />
+      </QuizBackground>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 {
+  "bg": "https://wallpaperaccess.com/full/390491.jpg",
   "title": "Enigmas da Esfinge",
   "description": "Quem ousa desafiar a lendária Esfinge? Acha que pode desvendar os enigmas?",
   "questions": [
@@ -30,7 +31,6 @@
       "wrong": "#FF5722",
       "success": "#4CAF50"
     },
-    "borderRadius": "4px",
-    "bg": "https://wallpaperaccess.com/full/390491.jpg"
+    "borderRadius": "4px"
   }
 }
