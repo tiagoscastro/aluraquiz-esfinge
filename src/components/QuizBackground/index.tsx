@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 
+interface bgProps {
+  bg: string;
+}
+
 const QuizBackground = styled.div`
   width: 100%;
   flex: 1;
   background-size: cover;
   background-position: center;
-  background-image: url(${({ theme }) => theme.bg});
+  background-image: url(${({ bg }: bgProps) => bg});
   background-color: ${({ theme }) => theme.colors.mainBg};
 
   @media screen and (max-width: 500px) {
@@ -21,7 +25,7 @@ const QuizBackground = styled.div`
           transparent,
           ${({ theme }) => theme.colors.mainBg}
         ),
-        url(${({ theme }) => theme.bg});
+        url(${({ bg }: bgProps) => bg});
       display: block;
       position: absolute;
       top: 0;

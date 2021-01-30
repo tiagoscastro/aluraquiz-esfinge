@@ -40,7 +40,35 @@ export const WidgetContent = styled.div`
   }
 
   ul {
-    padding: 0px;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid ${({ theme }) => `${theme.colors.secondary}40`};
     list-style: none;
+
+    input {
+      margin-right: 16px;
+    }
+  }
+
+  h2,
+  p {
+    margin-bottom: 16px;
+  }
+`;
+
+export const WidgetTopic = styled.a`
+  padding: 8px 16px;
+  margin-bottom: 8px;
+  outline: none;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  cursor: pointer;
+  transition: opacity 0.3s;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
   }
 `;
