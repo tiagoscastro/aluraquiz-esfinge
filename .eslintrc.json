@@ -25,6 +25,7 @@
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off"
