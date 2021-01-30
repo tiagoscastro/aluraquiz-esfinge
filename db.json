@@ -1,6 +1,6 @@
 {
-  "title": "Desafie a Esfinge",
-  "description": "Quem ousa desafiar a lendária Esfinge?",
+  "title": "Enigmas da Esfinge",
+  "description": "Quem ousa desafiar a lendária Esfinge? Acha que pode desvendar os enigmas?",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
@@ -24,9 +24,8 @@
   "theme": {
     "colors": {
       "primary": "#D4AF37",
-      "secondary": "#29B6F6",
+      "secondary": "#333333",
       "mainBg": "#FFFFFF",
-      "text": "#333333",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
       "success": "#4CAF50"

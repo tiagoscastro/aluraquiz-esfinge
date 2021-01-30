@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 
   #__next {
