@@ -6,7 +6,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(200).end();
   }
 
-  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader(
     'Access-Control-Allow-Methods',
