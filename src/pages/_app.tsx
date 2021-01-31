@@ -4,21 +4,21 @@ import { theme as AppTheme } from '../../db.json';
 
 const GlobalStyle = createGlobalStyle`
   * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    color: ${({ theme }) => theme.colors.contrastText};
   }
 
   html,
   body {
     min-height: 100vh;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Lato', sans-serif;
-    color: ${({ theme }) => theme.colors.secondary};
   }
 
   #__next {

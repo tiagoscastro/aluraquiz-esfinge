@@ -6,7 +6,7 @@ const Button = styled.button`
   outline: 0;
   border: 0;
   border-radius: ${({ theme }) => theme.borderRadius};
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.contrastText};
   font-weight: bold;
   font-size: 14px;
   line-height: 1;
