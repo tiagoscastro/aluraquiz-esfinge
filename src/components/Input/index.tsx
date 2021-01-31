@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 interface InputProps {
+  name: string;
   placeholder: string;
-  onChange: (e: unknown) => void;
+  value: string;
+  onChange: (e) => void;
 }
 
 const InputBase = styled.input`

@@ -12,7 +12,6 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
-import db from './api/db';
 
 export default function Home() {
   const router = useRouter();
