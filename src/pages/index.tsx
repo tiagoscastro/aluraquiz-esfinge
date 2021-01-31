@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { title, bg } from '../../db.json';
+import { title, description, bg } from '../../db.json';
 
 // Components
 import QuizBackground from '../components/QuizBackground';
@@ -14,13 +14,13 @@ import Footer from '../components/Footer';
 import GitHubCorner from '../components/GitHubCorner';
 
 export default function Home() {
-  const [name, setName] = useState('');
   const router = useRouter();
+  const [name, setName] = useState('');
 
   return (
     <>
       <Head>
-        <title>Enigmas da Esfinge - Alura Quiz</title>
+        <title>{title} - Alura Quiz</title>
       </Head>
 
       <QuizBackground bg={bg}>
@@ -33,6 +33,8 @@ export default function Home() {
             </WidgetHeader>
 
             <WidgetContent>
+              <p>{description}</p>
+
               <form
                 onSubmit={e => {
                   e.preventDefault();
@@ -42,6 +44,7 @@ export default function Home() {
                 <Input
                   name="userName"
                   placeholder="Diga-nos seu nome"
+                  value={name}
                   onChange={e => setName(e.target.value)}
                 />
 

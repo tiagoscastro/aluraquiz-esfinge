@@ -2,13 +2,14 @@ import styled from 'styled-components';
 
 export const Widget = styled.div`
   margin: 24px 0px;
-  background-color: ${({ theme }) => theme.colors.mainBg};
   border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.mainBg};
   overflow: hidden;
 
   h1,
   h2,
   h3 {
+    margin-bottom: 0;
     font-size: 24px;
     font-weight: 700;
     line-height: 1;
@@ -26,6 +27,10 @@ export const WidgetHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
   display: flex;
   align-items: center;
+
+  * {
+    margin: 0;
+  }
 `;
 
 export const WidgetContent = styled.div`
@@ -41,18 +46,7 @@ export const WidgetContent = styled.div`
 
   ul {
     padding-top: 16px;
-    margin-top: 16px;
-    border-top: 1px solid ${({ theme }) => `${theme.colors.secondary}40`};
     list-style: none;
-
-    input {
-      margin-right: 16px;
-    }
-  }
-
-  h2,
-  p {
-    margin-bottom: 16px;
   }
 `;
 
@@ -61,14 +55,18 @@ export const WidgetTopic = styled.a`
   margin-bottom: 8px;
   outline: none;
   border-radius: ${({ theme }) => theme.borderRadius};
-  color: ${({ theme }) => theme.colors.secondary};
-  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}90`};
   cursor: pointer;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, background-color 0.3s;
   display: block;
 
   &:hover,
   &:focus {
     opacity: 0.5;
+  }
+
+  input {
+    display: none;
   }
 `;

@@ -29,7 +29,7 @@ const FooterWrapper = styled.footer`
   }
 
   p {
-    color: ${({ theme }) => theme.colors.contrastText};
+    color: white;
   }
 `;
 
