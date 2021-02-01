@@ -18,7 +18,7 @@ export default function ExternalsQuizzes({ externalDb }: QuizProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const [projectName, githubUser] = query.id.split('___');
+  const [projectName, githubUser] = query.id.toString().split('___');
   const url = `https://${projectName}.${githubUser}.vercel.app/api/db`;
 
   const externalDb = await fetch(url)
