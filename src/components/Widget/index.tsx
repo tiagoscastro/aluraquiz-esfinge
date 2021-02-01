@@ -3,7 +3,9 @@ import styled from 'styled-components';
 export const Widget = styled.div`
   margin: 24px 0px;
   border-radius: 4px;
+  border: 2px solid ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.mainBg};
+  color: ${({ theme }) => theme.colors.contrastText};
   overflow: hidden;
 
   h1,
@@ -45,7 +47,7 @@ export const WidgetContent = styled.div`
   }
 
   ul {
-    padding-top: 16px;
+    padding: 0;
     list-style: none;
   }
 `;
@@ -56,6 +58,7 @@ export const WidgetTopic = styled.a`
   outline: none;
   border-radius: ${({ theme }) => theme.borderRadius};
   color: ${({ theme }) => theme.colors.contrastText};
+  text-decoration: none;
   background-color: ${({ theme }) => `${theme.colors.primary}90`};
   cursor: pointer;
   transition: opacity 0.3s, background-color 0.3s;
