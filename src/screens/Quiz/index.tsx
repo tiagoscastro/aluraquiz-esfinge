@@ -1,21 +1,27 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { questions, bg } from '../../db.json';
-import AlternativesForm from '../components/AlternativesForm';
-import Button from '../components/Button';
+import dbModel from '../../../db.json';
+import AlternativesForm from '../../components/AlternativesForm';
+import BackLinkArrow from '../../components/BackLinkArrow';
+import Button from '../../components/Button';
 
 // Components
-import QuizBackground from '../components/QuizBackground';
-import QuizContainer from '../components/QuizContainer';
-import QuizLogo from '../components/QuizLogo';
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import QuizLogo from '../../components/QuizLogo';
 import {
   Widget,
   WidgetContent,
   WidgetHeader,
   WidgetTopic,
-} from '../components/Widget';
+} from '../../components/Widget';
 
-type QuestionProps = typeof questions[0];
+type dbType = typeof dbModel;
+type QuestionProps = typeof dbModel.questions[0];
+
+interface QuizProps {
+  db: dbType;
+}
 
 interface QuestionWidgetProps {
   question: QuestionProps;
@@ -79,6 +85,7 @@ function QuestionWidget({
   return (
     <Widget>
       <WidgetHeader>
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </WidgetHeader>
 
@@ -142,16 +149,16 @@ function QuestionWidget({
   );
 }
 
-export default function Quiz() {
+export default function Quiz({ db }: QuizProps) {
   const screenStates = {
     LOADING: 'LOADING',
     QUIZ: 'QUIZ',
     RESULT: 'RESULT',
   };
   const [screenState, setScreenState] = useState(screenStates.LOADING);
-  const totalQuestions = questions.length;
+  const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const question = questions[currentQuestion];
+  const question = db.questions[currentQuestion];
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -179,7 +186,7 @@ export default function Quiz() {
         </title>
       </Head>
 
-      <QuizBackground bg={bg}>
+      <QuizBackground bg={db.bg}>
         <QuizContainer>
           <QuizLogo />
 

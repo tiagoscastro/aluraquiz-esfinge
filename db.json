@@ -21,11 +21,11 @@
       ]
     }
   ],
-  "external": [""],
+  "external": ["https://pato-quiz-nextjs.theedouglasam.vercel.app/"],
   "theme": {
     "colors": {
       "primary": "#D4AF37",
-      "secondary": "#FFFFFF",
+      "secondary": "#DCBD56",
       "mainBg": "#FFFFFF",
       "contrastText": "#333333",
       "wrong": "#FF5722",
