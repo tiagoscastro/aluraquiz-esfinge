@@ -1,9 +1,7 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import Lootie from 'react-lottie';
 import dbModel from '../../../db.json';
-import AlternativesForm from '../../components/AlternativesForm';
-import BackLinkArrow from '../../components/BackLinkArrow';
-import Button from '../../components/Button';
 
 // Components
 import QuizBackground from '../../components/QuizBackground';
@@ -15,6 +13,10 @@ import {
   WidgetHeader,
   WidgetTopic,
 } from '../../components/Widget';
+import BackLinkArrow from '../../components/BackLinkArrow';
+import Button from '../../components/Button';
+import AlternativesForm from '../../components/AlternativesForm';
+import animationData from '../../lotties/loading.json';
 
 type dbType = typeof dbModel;
 type QuestionProps = typeof dbModel.questions[0];
@@ -36,11 +38,18 @@ interface ResultWidgetProps {
 }
 
 function LoadingWidget() {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <Widget>
-      <WidgetHeader>Carregando...</WidgetHeader>
-
-      <WidgetContent>[Desafio do Loading]</WidgetContent>
+      <Lootie options={defaultOptions} width={100} height={250} />
     </Widget>
   );
 }
@@ -59,8 +68,9 @@ function ResultWidget({ results }: ResultWidgetProps) {
           {results.map((result, index) => (
             // eslint-disable-next-line react/no-array-index-key
             <li key={`result__${index}`}>
-              #{index < 9 ? `0${index + 1}` : index + 1} Resultado:{' '}
-              {result ? 'Acertou!' : 'Errou!'}
+              {`#${index < 9 ? `0${index + 1}` : index + 1}: ${
+                result ? 'Acertou!' : 'Errou!'
+              }`}
             </li>
           ))}
         </ul>

@@ -4,24 +4,36 @@
   "description": "Quem ousa desafiar a lendária Esfinge? Acha que pode desvendar os enigmas?",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
+      "image": "https://www.goias.gov.br/images/uploads/2015/10/crian%C3%A7as-1.jpg",
+      "title": "4 crianças estão em uma casa: Clara está jogando xadrez, João está assistindo televisão e Ana está dormindo. O que a quarta garota está fazendo?",
+      "description": "",
       "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "alternatives": [
+        "Jogando bola",
+        "Desenhando",
+        "Jogando xadrez",
+        "Comendo"
+      ]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
-      "answer": 0,
-      "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
-      ]
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWai_FWIOcdbbW3grxsI7Umg5oMTnF23GxMw&usqp=CAU",
+      "title": "Uma mãe tem 30 reais para dividir entre duas filhas. Qual o horário?",
+      "description": "",
+      "answer": 1,
+      "alternatives": ["11:51", "13:45", "19:03", "09:30"]
+    },
+    {
+      "image": "https://media.semprefamilia.com.br/semprefamilia/2015/11/bigstock-family-and-friends-sitting-at-95387342-620x413-80fb83e4.jpg",
+      "title": "Um casal tem 6 filhos homens, cada filho tem irmã. Quantas pessoas há na família?",
+      "description": "",
+      "answer": 3,
+      "alternatives": ["12", "14", "8", "9"]
     }
   ],
-  "external": ["https://pato-quiz-nextjs.theedouglasam.vercel.app/"],
+  "external": [
+    "https://pato-quiz-nextjs.theedouglasam.vercel.app/",
+    "https://flow-quiz.garubieru.vercel.app/"
+  ],
   "theme": {
     "colors": {
       "primary": "#D4AF37",
